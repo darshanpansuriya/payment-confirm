@@ -1,0 +1,48 @@
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.payment-option {
+  flex: 1;
+  max-width: 300px;
+  padding: 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-option:hover {
+  transform: translateY(-4px);
+}
+
+.stripe {
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.solidgate {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+}
+
+.payment-option h2 {
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+}
+
+.payment-option p {
+  margin: 0;
+  color: #4a5568;
+}
