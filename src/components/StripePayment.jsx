@@ -1,8 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import config from '../config/config';
-import './PaymentForm.css';
+// import './PaymentForm.css';
+import PaymentElementComp from "./stripeElement";
 
 const stripePromise = loadStripe(config.stripe.tracelo);
 
@@ -47,6 +48,15 @@ const StripeCheckoutForm = () => {
   const [statusMessage, setStatusMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isBusy, setIsBusy] = useState(false);
+
+  const appearance = {
+    theme: "stripe",
+  };
+
+  const options = {
+    clientSecret: clientSecretInput,
+    appearance,
+  };
 
   const paymentSummary = useMemo(() => {
     if (!paymentIntentInfo) return null;
@@ -99,12 +109,13 @@ const StripeCheckoutForm = () => {
     setErrorMessage('');
 
     try {
-      const cardElement = elements.getElement(CardElement);
-      const result = await stripe.confirmCardPayment(clientSecretInput.trim(), {
-        payment_method: {
-          card: cardElement
+      const result = await stripe.confirmPayment({
+        elements: elements,
+        redirect: "if_required",
+        confirmParams: {
+          save_payment_method: true,
         }
-      });
+      })
 
       if (result.error) {
         throw new Error(result.error.message);
@@ -198,18 +209,18 @@ const StripeCheckoutForm = () => {
             <div className="form-group">
               <label htmlFor="card-element">Card Details</label>
               <div className="card-element-shell">
-                <CardElement
-                  id="card-element"
-                  options={CARD_ELEMENT_OPTIONS}
-                  onChange={(event) => setCardComplete(event.complete)}
-                />
+                {clientSecretInput && 
+                  <Elements options={options} stripe={stripePromise}>
+                     <PaymentElementComp/>
+                  </Elements>
+                }
               </div>
             </div>
             <div className="form-actions">
               <button type="button" className="ghost-button" onClick={() => setStep('collectSecret')} disabled={isBusy}>
                 Back
               </button>
-              <button type="submit" disabled={!stripe || !cardComplete || isBusy}>
+              <button type="submit" disabled={!stripe || isBusy}>
                 {isBusy ? 'Processing…' : 'Confirm Payment'}
               </button>
             </div>

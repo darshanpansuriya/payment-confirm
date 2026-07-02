@@ -11,7 +11,7 @@ const HomePage = () => {
           <h2>Stripe Payment</h2>
           <p>Secure payments with Stripe</p>
         </Link>
-        <Link to="/solidgate-payment" className="payment-option solidgate">
+        <Link to="/solidgate" className="payment-option solidgate">
           <h2>Solidgate Payment</h2>
           <p>Secure payments with Solidgate</p>
         </Link>

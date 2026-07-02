@@ -1,0 +1,328 @@
+.sg-page {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.sg-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border: 1px solid #e7eaf3;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  padding: 2rem;
+  text-align: left;
+}
+
+/* Header ------------------------------------------------------------------ */
+.sg-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.sg-back {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  color: #5469d4;
+  font-weight: 600;
+}
+
+.sg-back:hover {
+  color: #3f4eb8;
+}
+
+.sg-header h1 {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #1a1f36;
+  letter-spacing: -0.3px;
+}
+
+.sg-sub {
+  margin: 0.4rem 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Account options --------------------------------------------------------- */
+.sg-options {
+  display: grid;
+  gap: 1rem;
+}
+
+.sg-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  padding: 1.25rem 1.4rem;
+  background: #f9fafc;
+  border: 1px solid #e7eaf3;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sg-option:hover {
+  border-color: #5469d4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(84, 105, 212, 0.12);
+}
+
+.sg-option-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1f36;
+}
+
+.sg-option-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Chip -------------------------------------------------------------------- */
+.sg-chip {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.3rem 0.8rem;
+  background: #eef1ff;
+  color: #3f4eb8;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Form -------------------------------------------------------------------- */
+.sg-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.sg-form label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 0.35rem;
+}
+
+.sg-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.sg-hint code {
+  background: #f1f3f9;
+  border-radius: 5px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.82rem;
+  color: #3f4eb8;
+}
+
+.sg-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #1a1f36;
+  background: #fbfcfe;
+  border: 1.5px solid #e0e4ee;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  resize: vertical;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sg-textarea:focus {
+  outline: none;
+  border-color: #5469d4;
+  box-shadow: 0 0 0 3px rgba(84, 105, 212, 0.15);
+}
+
+/* Messages ---------------------------------------------------------------- */
+.sg-error {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fdecec;
+  border: 1px solid #f5c2c2;
+  border-radius: 10px;
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.sg-warn {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 10px;
+  color: #9a6700;
+  font-size: 0.9rem;
+}
+
+/* Actions ----------------------------------------------------------------- */
+.sg-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.sg-primary,
+.sg-ghost {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.sg-primary {
+  background: #5469d4;
+  color: #ffffff;
+  border: 1px solid #5469d4;
+}
+
+.sg-primary:hover {
+  background: #4356c0;
+  transform: translateY(-1px);
+}
+
+.sg-ghost {
+  background: #ffffff;
+  color: #4b5563;
+  border: 1px solid #d8dce6;
+}
+
+.sg-ghost:hover {
+  background: #f4f6fb;
+}
+
+/* Checkout frame ---------------------------------------------------------- */
+.sg-frame {
+  border: 1px solid #e7eaf3;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: #ffffff;
+  min-height: 200px;
+}
+
+/* Status banner ----------------------------------------------------------- */
+.sg-banner {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.sg-banner--success {
+  background: #e6f7ed;
+  border: 1px solid #abe1c3;
+  color: #1a9d54;
+}
+
+.sg-banner--failed {
+  background: #fdecec;
+  border: 1px solid #f5c2c2;
+  color: #c0392b;
+}
+
+/* Order result ------------------------------------------------------------ */
+.sg-order {
+  margin-top: 1.5rem;
+}
+
+.sg-order h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  color: #1a1f36;
+}
+
+.sg-events-empty {
+  margin: 0;
+  padding: 1rem;
+  background: #f9fafc;
+  border: 1px dashed #d8dce6;
+  border-radius: 10px;
+  color: #6b7280;
+  font-size: 0.88rem;
+}
+
+.sg-fields {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.9rem 1rem;
+  background: #f9fafc;
+  border: 1px solid #e7eaf3;
+  border-radius: 10px;
+}
+
+.sg-field dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+}
+
+.sg-field dd {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sg-field code {
+  flex: 1;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88rem;
+  color: #1a1f36;
+  word-break: break-all;
+}
+
+.sg-copy {
+  flex-shrink: 0;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #3f4eb8;
+  background: #eef1ff;
+  border: 1px solid #d7ddff;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sg-copy:hover {
+  background: #e3e8ff;
+}
+
+@media (max-width: 560px) {
+  .sg-card {
+    padding: 1.5rem;
+  }
+
+  .sg-actions {
+    flex-direction: column-reverse;
+  }
+
+  .sg-primary,
+  .sg-ghost {
+    width: 100%;
+  }
+}
