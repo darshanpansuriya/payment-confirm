@@ -11,6 +11,16 @@ const SOLIDGATE_BRANDS = [
     name: 'IQ Center',
     description: 'Load a Solidgate checkout for the IQ Center merchant account.',
   },
+  {
+    id: 'fitday',
+    name: 'Fitday',
+    description: 'Load a Solidgate checkout for the Fitday merchant account.',
+  },
+  {
+    id: 'public_registry',
+    name: 'Public Registry',
+    description: 'Load a Solidgate checkout for the Public Registry merchant account.',
+  },
 ];
 
 export const getBrand = (id) => SOLIDGATE_BRANDS.find((brand) => brand.id === id) || null;

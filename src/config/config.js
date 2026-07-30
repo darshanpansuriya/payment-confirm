@@ -6,6 +6,8 @@ const config = {
   solidgate: {
     infochecker: import.meta.env.VITE_INFOCHECKER_SOLIDGATE_PUBLIC_KEY,
     iqcenter: import.meta.env.VITE_IQCENTER_SOLIDGATE_PUBLIC_KEY,
+    fitday: import.meta.env.VITE_FITDAY_SOLIDGATE_PUBLIC_KEY,
+    public_registry: import.meta.env.VITE_PUBLIC_REGISTRY_SOLIDGATE_PUBLIC_KEY,
   }
 };
 
