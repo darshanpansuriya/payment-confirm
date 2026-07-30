@@ -15,10 +15,10 @@ const OBJECT_PLACEHOLDER = `{
 // payload. The card token can sit in a couple of places depending on the
 // transaction shape, so check both.
 const extractOrderInfo = (payload) => {
-  const orderId = payload?.order?.order_id ?? null;
+  const orderId = payload?.response?.order?.order_id ?? null;
 
   let cardToken = null;
-  const transactions = payload?.transactions;
+  const transactions = payload?.response?.transactions;
   if (transactions && typeof transactions === 'object') {
     for (const tx of Object.values(transactions)) {
       const token = tx?.card_token?.token ?? tx?.card?.card_token?.token;
