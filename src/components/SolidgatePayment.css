@@ -213,6 +213,10 @@
   min-height: 200px;
 }
 
+.sg-paypal:not(:empty) {
+  margin-bottom: 0.75rem;
+}
+
 /* Status banner ----------------------------------------------------------- */
 .sg-banner {
   margin-bottom: 1rem;

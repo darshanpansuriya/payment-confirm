@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import Payment from '@solidgate/react-sdk';
 import config from '../config/config';
@@ -10,6 +10,15 @@ const OBJECT_PLACEHOLDER = `{
   "merchant": "api_pk_…",
   "signature": "…"
 }`;
+
+// PayPal button, rendered by the SDK into its own container above the card
+// form. It only appears if PayPal is enabled for the merchant in Solidgate HUB.
+const PAYPAL_BUTTON_PARAMS = {
+  enabled: true,
+  color: 'gold',
+  shape: 'rect',
+  label: 'paypal',
+};
 
 // Pull just the two fields we surface on the page out of an onOrderStatus
 // payload. The card token can sit in a couple of places depending on the
@@ -43,6 +52,7 @@ const SolidgatePayment = () => {
   const [status, setStatus] = useState(null); // null | 'success' | 'failed'
   const [orderInfo, setOrderInfo] = useState(null); // { orderId, cardToken }
   const [copiedField, setCopiedField] = useState(null);
+  const paypalContainerRef = useRef(null);
 
   // Unknown account in the URL → bounce back to the account picker.
   if (!selectedBrand) {
@@ -192,7 +202,14 @@ const SolidgatePayment = () => {
             )}
 
             <div className="sg-frame">
-              <Payment merchantData={merchantData} width="100%" {...sdkHandlers} />
+              <div ref={paypalContainerRef} className="sg-paypal" />
+              <Payment
+                merchantData={merchantData}
+                width="100%"
+                paypalButtonParams={PAYPAL_BUTTON_PARAMS}
+                paypalContainerRef={paypalContainerRef}
+                {...sdkHandlers}
+              />
             </div>
 
             <div className="sg-order">
